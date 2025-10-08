@@ -1,0 +1,7 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+  <div class="container main-content-detail">
+    {% include 'recipes/partials/recipe.html' with recipe=recipe %}
+  </div>
+{% endblock %}
