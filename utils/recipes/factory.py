@@ -34,7 +34,7 @@ def make_recipe():
             "created_at": fake.date_time(),
             "author": {"first_name": fake.first_name(), "last_name": fake.last_name()},
             "category": {"name": fake.word()},
-            "cover": {"url": "https://loremflickr.com/%s/%s/food,cook" % rand_ratio()},
+                "cover": {"url": "https://picsum.photos/%s/%s" % rand_ratio()},
         }
 
     # fallback simples quando faker não está instalado
@@ -49,7 +49,7 @@ def make_recipe():
         "created_at": datetime.now(),
         "author": {"first_name": "João", "last_name": "Silva"},
         "category": {"name": "Outros"},
-        "cover": {"url": "https://loremflickr.com/%s/%s/food,cook" % rand_ratio()},
+        "cover": {"url": "https://picsum.photos/%s/%s" % rand_ratio()},
     }
 
 
