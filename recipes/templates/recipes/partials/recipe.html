@@ -1,14 +1,20 @@
+{% load static %}
+
 <div class="recipe recipe-list-item">
     <div class="recipe-cover">
-            {% load static %}
+        <a href="{% if recipe.id %}{% url 'recipes:recipe' recipe.id %}{% else %}#{% endif %}">
             {% if recipe.cover.url %}
-                <img src="{{ recipe.cover.url }}" onerror="this.onerror=null;this.src='{% static 'recipes/images/placeholder.svg' %}';" alt="{{ recipe.title }}">
+            <img src="{{ recipe.cover.url }}" onerror="this.onerror=null;this.src='{% static "recipes/images/placeholder.svg" %}';" alt="{{ recipe.title }}">
             {% else %}
                 <img src="{% static 'recipes/images/placeholder.svg' %}" alt="placeholder">
             {% endif %}
-        </div>
+        </a>
+    </div>
+
     <div class="recipe-title-container">
-        <h2 class="recipe-title">{{ recipe.title }}</h2>
+        <h2 class="recipe-title">
+            <a href="{% if recipe.id %}{% url 'recipes:recipe' recipe.id %}{% else %}#{% endif %}">{{ recipe.title }}</a>
+        </h2>
     </div>
 
     <div class="recipe-author">
@@ -49,7 +55,7 @@
 
     {% if is_detail_page is not True %}
         <footer class="recipe-footer">
-            <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
+            <a class="recipe-read-more button button-dark button-full-width" href="{% url 'recipes:recipe' recipe.id %}">
                 <i class="fas fa-eye"></i>
                 <span>ver mais...</span>
             </a>

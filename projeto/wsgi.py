@@ -1,5 +1,6 @@
+
 """
-WSGI config for project project.
+WSGI config for projeto project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -10,9 +11,7 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
-from dotenv import load_dotenv
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'projeto.settings')
 
-load_dotenv()
 application = get_wsgi_application()

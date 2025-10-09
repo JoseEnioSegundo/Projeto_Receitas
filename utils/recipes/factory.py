@@ -14,6 +14,7 @@ fake = Faker('pt_BR')
 
 def make_recipe():
     return {
+        'id': fake.random_number(digits=2, fix_len=True),
         'title': fake.sentence(nb_words=6),
         'description': fake.sentence(nb_words=12),
         'preparation_time': fake.random_number(digits=2, fix_len=True),
@@ -30,9 +31,7 @@ def make_recipe():
             'name': fake.word()
         },
         'cover': {
-            # Usar placeholder local por padrão para evitar dependência de serviços externos
-            # Se preferir imagens externas, altere aqui para uma URL como picsum.photos
-            'url': '/static/recipes/images/placeholder.svg',
+            'url': 'https://loremflickr.com/%s/%s/food,cook' % rand_ratio(),
         }
     }
 
