@@ -2,7 +2,7 @@
     <div class="recipe-cover">
             {% load static %}
             {% if recipe.cover.url %}
-                <img src="{{ recipe.cover.url }}" alt="{{ recipe.title }}">
+                <img src="{{ recipe.cover.url }}" onerror="this.onerror=null;this.src='{% static 'recipes/images/placeholder.svg' %}';" alt="{{ recipe.title }}">
             {% else %}
                 <img src="{% static 'recipes/images/placeholder.svg' %}" alt="placeholder">
             {% endif %}
