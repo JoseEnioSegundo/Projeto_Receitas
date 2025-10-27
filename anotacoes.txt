@@ -1,1 +1,37 @@
-Anotações do curso
+Ativar ambiente virtual
+venv\Scripts\activate
+
+Criar migrações
+python manage.py makemigrations
+
+Aplicar migrações 
+python manage.py migrate  
+
+Como pegar dados do Admin do Django e mostrar no site
+Modelos (models.py)
+Tudo começa com os modelos, que definem as tabelas do banco de dados.
+Exemplo: criar uma tabela de receitas com título, descrição e imagem.
+Registrar no Admin (admin.py)
+Registrar o modelo no admin permite cadastrar e editar os dados pelo painel web (/admin).
+Com isso, você consegue adicionar dados sem mexer no código.
+Criar uma View (views.py)
+A view pega os dados do banco usando queries.
+Exemplo: recipes = Recipe.objects.all() busca todas as receitas.
+Depois, envia esses dados para o template com render(request, 'template.html', {'recipes': recipes}).
+Definir as URLs (urls.py)
+Criar uma rota que a view vai atender.
+Exemplo: path('', views.index, name='index').
+Criar o Template HTML (templates/)
+No HTML, usar templating do Django para exibir os dados.
+
+Resumo rápido:
+
+Admin → cadastra dados
+
+Modelos → definem os dados
+
+Views → buscam os dados
+
+URLs → conectam a view ao site
+
+Templates → mostram os dados pro usuário
