@@ -34,4 +34,4 @@ Views → buscam os dados
 
 URLs → conectam a view ao site
 
-Templates → mostram os dados pro usuário
+Templates → mostram os dados pro usuário.
