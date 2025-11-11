@@ -35,3 +35,9 @@ Views → buscam os dados
 URLs → conectam a view ao site
 
 Templates → mostram os dados pro usuário.
+
+
+recipes = Recipe.objects.filter(
+    category__id=6,
+    is_published=True,
+).order_by('-id')
